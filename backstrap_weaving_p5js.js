@@ -7,9 +7,9 @@ var ey = 0; //eltolás lefelé
 var h = 0; //minta első sorának hossza
 var x = 0; //hatszög x pozíciója
 var y = 0; //hatszög y pozíciója
-var red = 0;
-var green = 0;
-var blue = 0;
+var red_ = 0;
+var green_ = 0;
+var blue_ = 0;
 var ciklus = 0;
 var canvas;
 
@@ -47,15 +47,15 @@ function draw() {
     var h = mintak[c].length;
     var t = (mintak[c].charAt(c * (h - 1 - 2 * a) + a));
     if (t === 's') {
-        red = 255;
-        green = 0;
-        blue = 0;
+        red_ = 255;
+        green_ = 0;
+        blue_ = 0;
     } else {
-        red = 255;
-        green = 255;
-        blue = 255;
+        red_ = 255;
+        green_ = 255;
+        blue_ = 255;
     }
-    hatszog(1 + width / 2 - h0 * 8 + (c * (h - 1 - 2 * a) + a) * 16 + c * 8, 4 + b * 41 + ey, red, green, blue);
+    hatszog(1 + width / 2 - h0 * 8 + (c * (h - 1 - 2 * a) + a) * 16 + c * 8, 4 + b * 41 + ey, red_, green_, blue_);
     a = a + 1;
 
     if ((a === h) && (c === 0)) {
@@ -83,7 +83,7 @@ function draw() {
     //    fill(255);
     //    rect(0, 0, 600, 300);
     //}
-    if ((mouseIsPressed || touchIsDown) && mouseX < 600 && mouseY < 300 && mouseY) {
+    if (mouseIsPressed && mouseX < 600 && mouseY < 300 && mouseY) {
         fill(128);
         rect(0, 0, 600, 300);
         a = 0;
